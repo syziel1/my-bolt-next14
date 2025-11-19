@@ -14,7 +14,6 @@ export default async function Home() {
   let error: { message: string } | null = null;
   const isDev = process.env.NODE_ENV === 'development';
 
-  // 2. Pobranie danych z jawnym typowaniem
   try {
     const supabase = createClient();
     const { data, error: queryError } = await supabase
