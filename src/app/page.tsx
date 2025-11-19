@@ -46,7 +46,8 @@ export default async function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-background px-6 text-center text-foreground">
+    <main className="flex min-h-screen flex-col items-center justify-between gap-6 bg-background px-6 py-8 text-center text-foreground">
+      <div className="flex-1 flex flex-col items-center justify-center gap-6 w-full">
       <div className="space-y-2">
         <h1 className="text-balance text-4xl font-bold sm:text-5xl">
           Next 14.x with Supabase template ⚡
@@ -120,6 +121,11 @@ export default async function Home() {
         Start editing <code className="rounded bg-muted px-2 py-1">src/app/page.tsx</code> to make
         this project your own.
       </p>
+      </div>
+
+      <footer className="mt-8 text-sm text-muted-foreground">
+        <p>Created by syziel1</p>
+      </footer>
     </main>
   );
 }
