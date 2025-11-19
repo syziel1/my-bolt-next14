@@ -20,11 +20,11 @@ export default async function Home() {
       .from("mottos")
       .select("*")
       .limit(3)
-      .returns<Motto[]>(); // <--- TUTAJ używamy interfejsu, naprawiając błąd lintera
+      .returns<Motto[]>(); // <--- HERE we use the interface, fixing the linter error
     mottos = data;
     error = queryError;
-  } catch (e: any) {
-    error = { message: e?.message || "Supabase client initialization failed." };
+  } catch (e: unknown) {
+    error = { message: e instanceof Error ? e.message : "Supabase client initialization failed." };
   }
 
   return (
@@ -87,7 +87,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
             </ul>
             {mottos?.length === 0 && (
               <p className="text-sm text-warning bg-warning/10 p-2 rounded border border-warning/20">
-                Connected, but the "mottos" table is empty. Run the SQL migration.
+                Connected, but the &ldquo;mottos&rdquo; table is empty. Run the SQL migration.
               </p>
             )}
           </div>
