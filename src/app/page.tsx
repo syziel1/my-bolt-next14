@@ -52,8 +52,8 @@ export default async function Home() {
                   Jesteś w trybie <strong>DEV</strong>. Upewnij się, że masz plik <code className="bg-background px-1 py-0.5 rounded border">.env</code> w głównym katalogu:
                 </p>
                 <pre className="p-3 bg-slate-950 text-slate-50 rounded-md overflow-x-auto text-xs font-mono">
-NEXT_PUBLIC_SUPABASE_URL=twoj-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=twoj-klucz
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
                 </pre>
               </>
             ) : (
