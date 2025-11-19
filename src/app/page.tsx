@@ -74,7 +74,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
               Ostatnio dodane motta:
             </p>
             <ul className="space-y-3">
-              {/* Teraz TypeScript wie, że 'motto' ma pole .content, .author itp. */}
+              
               {mottos?.map((motto) => (
                 <li key={motto.id} className="rounded border bg-muted/30 p-3 text-sm">
                   <p className="italic mb-1">&quot;{motto.content}&quot;</p>
