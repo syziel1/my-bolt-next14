@@ -86,7 +86,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
               ))}
             </ul>
             {(!mottos || mottos.length === 0) && (
-              <p className="text-sm text-yellow-600 bg-yellow-50 p-2 rounded border border-yellow-200">
+              <p className="text-sm text-warning bg-warning/10 p-2 rounded border border-warning/20">
                 Połączono, ale tabela &quot;mottos&quot; jest pusta. Uruchom migrację SQL.
               </p>
             )}
