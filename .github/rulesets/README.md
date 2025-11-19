@@ -36,9 +36,9 @@ If you need to restrict status checks to a specific GitHub App installation, you
 
 To find your GitHub App's integration ID:
 1. Go to your repository Settings → Integrations & apps
-2. Click on the GitHub App
-3. The integration ID is in the URL: `https://github.com/settings/installations/{integration_id}`
-
+2. Click on the GitHub App to view its details.
+3. The integration ID will be shown in the app details, or you can find it by inspecting the check run details in a pull request (look for `installation_id` in the API response or UI).
+   For organization-level installations, the integration ID may appear in the installation URL, but for repository-specific installations, use the repository's settings or check run details.
 **Note**: Using `integration_id` makes the ruleset environment-specific and requires updating when moving to different repositories or organizations.
 
 ### Importing the Ruleset
