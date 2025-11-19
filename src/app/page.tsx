@@ -71,7 +71,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
         ) : (
           <div className="space-y-4">
             <p className="text-sm text-muted-foreground">
-              Ostatnio dodane motta:
+              Recently added mottos:
             </p>
             <ul className="space-y-3">
               
