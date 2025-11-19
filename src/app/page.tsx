@@ -1,5 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 
+export const dynamic = "force-dynamic";
+
 // 1. Type definition (used below in the .returns<Motto[]>() query)
 interface Motto {
   id: number;
@@ -85,7 +87,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
                 </li>
               ))}
             </ul>
-            {mottos?.length === 0 && (
+            {(mottos?.length === 0 || !mottos) && (
               <p className="text-sm text-warning bg-warning/10 p-2 rounded border border-warning/20">
                 Connected, but the &ldquo;mottos&rdquo; table is empty. Run the SQL migration.
               </p>
