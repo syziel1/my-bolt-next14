@@ -87,7 +87,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
             </ul>
             {mottos?.length === 0 && (
               <p className="text-sm text-warning bg-warning/10 p-2 rounded border border-warning/20">
-                Połączono, ale tabela &quot;mottos&quot; jest pusta. Uruchom migrację SQL.
+                Connected, but the "mottos" table is empty. Run the SQL migration.
               </p>
             )}
           </div>
