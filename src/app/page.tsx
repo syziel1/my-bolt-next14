@@ -10,16 +10,23 @@ interface Motto {
 }
 
 export default async function Home() {
-  const supabase = createClient();
-  
+  let mottos: Motto[] | null = null;
+  let error: { message: string } | null = null;
   const isDev = process.env.NODE_ENV === 'development';
 
   // 2. Pobranie danych z jawnym typowaniem
-  const { data: mottos, error } = await supabase
-    .from("mottos")
-    .select("*")
-    .limit(3)
-    .returns<Motto[]>(); // <--- TUTAJ używamy interfejsu, naprawiając błąd lintera
+  try {
+    const supabase = createClient();
+    const { data, error: queryError } = await supabase
+      .from("mottos")
+      .select("*")
+      .limit(3)
+      .returns<Motto[]>(); // <--- TUTAJ używamy interfejsu, naprawiając błąd lintera
+    mottos = data;
+    error = queryError;
+  } catch (e: any) {
+    error = { message: e?.message || "Supabase client initialization failed." };
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-background px-6 text-center text-foreground">
