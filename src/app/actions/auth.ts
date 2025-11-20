@@ -38,6 +38,10 @@ export async function signUp(formData: FormData) {
     return { error: 'Name, email and password are required' }
   }
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return { error: 'Please enter a valid email address' }
+  }
   if (password.length < 6) {
     return { error: 'Password must be at least 6 characters' }
   }
