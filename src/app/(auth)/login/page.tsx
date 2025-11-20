@@ -55,7 +55,11 @@ export default function LoginPage() {
               />
             </div>
             {error && (
-              <div className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/30 p-3 rounded-md border border-red-200 dark:border-red-900">
+              <div
+                role="alert"
+                aria-live="assertive"
+                className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/30 p-3 rounded-md border border-red-200 dark:border-red-900"
+              >
                 {error}
               </div>
             )}
