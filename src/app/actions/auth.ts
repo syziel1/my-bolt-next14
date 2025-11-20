@@ -46,11 +46,15 @@ export async function signUp(formData: FormData) {
     return { error: 'Password must be at least 6 characters' }
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  if (!process.env.NEXT_PUBLIC_SITE_URL) {
+    console.warn('Warning: NEXT_PUBLIC_SITE_URL environment variable is not set. Using default: http://localhost:3000');
+  }
   const { error } = await supabase.auth.signUp({
     email,
     password,
     options: {
-      emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+      emailRedirectTo: `${siteUrl}/auth/callback`,
       data: {
         full_name: name,
       },
