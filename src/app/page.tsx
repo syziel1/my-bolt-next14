@@ -97,8 +97,8 @@ export default async function Home() {
                   an <code className="bg-background px-1 py-0.5 rounded border">.env</code> file in the root directory:
                 </p>
                 <pre className="p-3 bg-slate-950 text-slate-50 rounded-md overflow-x-auto text-xs font-mono">
-                  NEXT_PUBLIC_SUPABASE_URL=your-project-url<br/>
-                  NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+                  {`NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key`}
                 </pre>
               </>
             ) : (
