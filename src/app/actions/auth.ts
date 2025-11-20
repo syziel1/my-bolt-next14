@@ -42,8 +42,8 @@ export async function signUp(formData: FormData) {
   if (!emailRegex.test(email)) {
     return { error: 'Please enter a valid email address' }
   }
-  if (password.length < 6) {
-    return { error: 'Password must be at least 6 characters' }
+  if (password.length < 8) {
+    return { error: 'Password must be at least 8 characters' }
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
