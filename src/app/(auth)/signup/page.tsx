@@ -65,7 +65,7 @@ export default function SignUpPage() {
                 id="password"
                 name="password"
                 type="password"
-                placeholder="At least 6 characters"
+                placeholder="At least 8 characters"
                 required
                 disabled={isPending}
               />
